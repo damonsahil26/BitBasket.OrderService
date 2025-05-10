@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,20 @@ namespace BitBasket.OrderService.DataAccess
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddRequiredDataAccessServices(this IServiceCollection services)
+        public static IServiceCollection AddRequiredDataAccessServices(this IServiceCollection services,
+            IConfiguration configuration)
         {
+            var connectionStringTemplate = configuration.GetConnectionString("MongoDB");
+            var connectionString = connectionStringTemplate?
+                .Replace("$MONGO_HOST", Environment.GetEnvironmentVariable("MONGO_HOST") ?? "localhost")
+                .Replace("$MONGO_PORT", Environment.GetEnvironmentVariable("MONGO_PORT") ?? "27017");
+
+            services.AddSingleton<IMongoClient>(new MongoClient(connectionString));
+            services.AddScoped<IMongoDatabase>(provider =>
+            {
+                var client = provider.GetRequiredService<IMongoClient>();
+                return client.GetDatabase("OrdersDatabase");
+            });
             return services;
         }
     }
