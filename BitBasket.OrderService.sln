@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBasket.OrderService.API", "BitBasket.OrderService.API\BitBasket.OrderService.API.csproj", "{2628DE7A-862E-4D8D-A5E2-BA8952A8205A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBasket.OrderService.Business", "BitBasket.OrderService.Business\BitBasket.OrderService.Business.csproj", "{A28AEFEF-4894-4CE2-BE6F-D9435BFA6ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBasket.OrderService.DataAccess", "BitBasket.OrderService.DataAccess\BitBasket.OrderService.DataAccess.csproj", "{3A787A2B-5E75-40EC-90AC-796A49DFA4BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2628DE7A-862E-4D8D-A5E2-BA8952A8205A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2628DE7A-862E-4D8D-A5E2-BA8952A8205A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2628DE7A-862E-4D8D-A5E2-BA8952A8205A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2628DE7A-862E-4D8D-A5E2-BA8952A8205A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28AEFEF-4894-4CE2-BE6F-D9435BFA6ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28AEFEF-4894-4CE2-BE6F-D9435BFA6ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28AEFEF-4894-4CE2-BE6F-D9435BFA6ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28AEFEF-4894-4CE2-BE6F-D9435BFA6ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A787A2B-5E75-40EC-90AC-796A49DFA4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A787A2B-5E75-40EC-90AC-796A49DFA4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A787A2B-5E75-40EC-90AC-796A49DFA4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A787A2B-5E75-40EC-90AC-796A49DFA4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92CED915-48AA-4E9C-B5A2-FE495E8993E1}
+	EndGlobalSection
+EndGlobal
