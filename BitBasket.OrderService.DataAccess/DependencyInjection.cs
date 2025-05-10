@@ -16,8 +16,8 @@ namespace BitBasket.OrderService.DataAccess
         {
             var connectionStringTemplate = configuration.GetConnectionString("MongoDB");
             var connectionString = connectionStringTemplate?
-                .Replace("$MONGO_HOST", Environment.GetEnvironmentVariable("MONGO_HOST") ?? "localhost")
-                .Replace("$MONGO_PORT", Environment.GetEnvironmentVariable("MONGO_PORT") ?? "27017");
+                .Replace("$MONGO_HOST", Environment.GetEnvironmentVariable("MONGO_HOST"))
+                .Replace("$MONGO_PORT", Environment.GetEnvironmentVariable("MONGO_PORT"));
 
             services.AddSingleton<IMongoClient>(new MongoClient(connectionString));
             services.AddScoped<IMongoDatabase>(provider =>
