@@ -1,11 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using BitBasket.OrderService.DataAccess.Interfaces;
+using BitBasket.OrderService.DataAccess.Repositoris;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BitBasket.OrderService.DataAccess
 {
@@ -25,6 +22,8 @@ namespace BitBasket.OrderService.DataAccess
                 var client = provider.GetRequiredService<IMongoClient>();
                 return client.GetDatabase("OrdersDatabase");
             });
+
+            services.AddScoped<IOrderRepository, OrderRepository>();
             return services;
         }
     }
